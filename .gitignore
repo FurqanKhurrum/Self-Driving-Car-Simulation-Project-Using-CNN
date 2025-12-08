@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# --- Virtual environment ---
+.venv/
+venv/
+
+# --- Data (images + logs) ---
+# Comment this out if you want to version your CSV
+data/IMG/
+data/driving_log.csv
+
+# --- Model files ---
+models/*.h5
+models/*.hdf5
+models/checkpoints/
+
+# --- Simulator / generated content ---
+self_driving_env/
+simulator/
+
+# --- Editor / OS files ---
+.DS_Store
+.vscode/
+.idea/
+
+# --- Jupyter (if used later) ---
+*.ipynb_checkpoints

@@ -1,0 +1,18 @@
+# Compatible with Python 3.13
+tensorflow  # Will get latest (2.20.0)
+numpy  # Will get latest compatible
+pandas
+opencv-python
+scikit-learn
+scipy
+matplotlib
+Pillow
+imgaug
+h5py
+eventlet
+flask
+python-socketio
+python-engineio
+Werkzeug
+tqdm
+seaborn

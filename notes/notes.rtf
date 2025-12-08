@@ -1,0 +1,38 @@
+
+## CHALLENGE 1: GETTING CLEAN DATA
+###########################################
+I applied downsampling, where the simulator records way too many frames of the car going straight without actually turning
+so we defined a threshold, any steering value below 0.02 was considered going straight and we filtered that out by 70%.
+
+On first attempt, the data recorded had a huge spike at 0.0 steering, meaning most of what was recorded was a straight line movement
+
+this imbalance is the reason why most self driving models fail on first training run
+
+the model learns to "always go straight" because of the loss function is MSE, it minimizes error by just
+predicting 0.0 steering for everything. Mathematically, it worked but failed in practice
+
+To fix this imbalance, we can do a couple of things:
+    1. collect better data 
+        a. slow laps, stay in center, more turns
+        b. 2-3 laps in reverse
+    2. Downsample straight driving rows, delete rows with 0.0 steering
+
+in my first attempt, i had 6706 straight frames with almost no turning frames, so decided on deleting that
+data and start over with better driving as mentioned above
+
+
+Even after multiple test runs and cleaner laps, 0.00 was still by far the most dominating factor,
+So to fix this I implemented a threshold of 0.02, anything less than this was considered straight 
+movement.
+The other threshold defined was to keep only 20% of the original straight line movement
+
+
+## CHALLENGE 2: MODEL LEARNING
+###########################################
+
+after training the model based on the simulator dataset the results were:
+Training loss: 0.2408
+Validation loss: 0.1838
+a val loss b/w 0.15 and 0.25 is normal and expected
+val_loss < loss is a good sign which means our downsampling helped and the model is generalizing well enough
+
