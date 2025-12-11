@@ -62,14 +62,9 @@ def telemetry(sid, data):
 
     # Predict steering from model
     raw_steering = float(model.predict(image, verbose=0)[0][0])
-
-    # Optional scaling (shrink overly aggressive steering)
     scaled_steering = raw_steering * STEERING_SCALE
-
-    # Apply small bias (to counter consistent drift)
     biased_steering = scaled_steering + STEERING_BIAS
 
-    # Optional smoothing: exponential moving average with previous steering
     if SMOOTHING_ALPHA > 0.0:
         steering = (
             SMOOTHING_ALPHA * _prev_steering
@@ -155,7 +150,7 @@ def main():
     maxSpeed = args.max_speed
     STEERING_BIAS = args.steering_bias
     STEERING_SCALE = args.steering_scale
-    SMOOTHING_ALPHA = max(0.0, min(0.99, args.smooth))  # clamp to [0, 0.99]
+    SMOOTHING_ALPHA = max(0.0, min(0.99, args.smooth))
 
     print(f"[INFO] Loading model from: {args.model}")
     model = load_model(args.model, compile=False)
