@@ -11,18 +11,19 @@ venv/
 
 # --- Data (images + logs) ---
 # Comment this out if you want to version your CSV
-data/IMG/
-data/driving_log.csv
+data/
 
 # --- Model files ---
 models/*.h5
 models/*.hdf5
 models/checkpoints/
+models/__init__.py
 
 # --- Simulator / generated content ---
 self_driving_env/
 simulator/
 sim_env_new/
+scripts/__init__.py
 
 # --- Editor / OS files ---
 .DS_Store
