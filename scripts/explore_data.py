@@ -71,11 +71,6 @@ def main():
     plt.tight_layout()
     plt.show()
 
-    # If you ever want to save the balanced CSV for debugging:
-    # balanced_path = os.path.join("data", "run1", "driving_log_balanced.csv")
-    # df_balanced.to_csv(balanced_path, index=False)
-    # print("\nBalanced CSV saved to:", balanced_path)
-
 
 if __name__ == "__main__":
     main()
