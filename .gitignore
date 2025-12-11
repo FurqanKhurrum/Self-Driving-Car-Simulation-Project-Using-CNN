@@ -22,6 +22,7 @@ models/checkpoints/
 # --- Simulator / generated content ---
 self_driving_env/
 simulator/
+sim_env_new/
 
 # --- Editor / OS files ---
 .DS_Store
