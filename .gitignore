@@ -11,8 +11,7 @@ venv/
 
 # --- Data (images + logs) ---
 # Comment this out if you want to version your CSV
-data/IMG/
-data/driving_log.csv
+data/
 
 # --- Model files ---
 models/*.h5
