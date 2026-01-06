@@ -122,12 +122,7 @@ The model successfully navigates most of the track autonomously, including gentl
 - Experiment with different model architectures
 - Add data visualization dashboard
 
-## License
-
-This project is for educational purposes as part of the CVI620 course.
-
 ## Acknowledgments
 
 - Udacity for the self-driving car simulator
 - NVIDIA for the CNN architecture reference
-- Course instructor: Ellie Azizi
